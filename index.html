@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel Gonzalez</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Daniel Gonzalez</a>
+        <nav class="nav">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>I’m Daniel.</h1>
+      <p>Software developer intern. Learning web.</p>
+
+      <section class="card">
+        <h2>Photo</h2>
+        <p>Add your photo at <code>assets/images/me.jpg</code>.</p>
+        <img class="profile" src="assets/images/me.png" alt="Photo of Daniel Gonzalez" />
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small> <span id="year"></span> Daniel Gonzalez</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
