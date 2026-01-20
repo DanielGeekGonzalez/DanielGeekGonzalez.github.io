@@ -14,7 +14,7 @@ body {
 }
 
 .site-header {
-  position: sticky; /* “scrolls with the page” */
+  position: sticky; /*“scrolls with the page” */
   top: 0;
   background: white;
   border-bottom: 1px solid #e6e6e6;
