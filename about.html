@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Daniel Gonzalez</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+       <div class="container">
+        <a class="brand" href="index.html">Daniel Gonzalez</a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="projects.html">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>About</h1>
+
+      <section class="card">
+        <h2>Who I am</h2>
+        <p>
+          I’m a software engineering intern focused on building reliable systems and learning frontend fundamentals.
+          My background is backend-first, and this site is part of my training to become more well-rounded.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What I value</h2>
+        <ul>
+          <li>Clean, maintainable code</li>
+          <li>Security-aware engineering</li>
+          <li>Strong fundamentals and continuous learning</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Currently learning</h2>
+        <ul>
+          <li>HTML semantics and accessibility</li>
+          <li>CSS layout (Flexbox, then Grid)</li>
+          <li>JavaScript DOM basics</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small> <span id="year"></span> Daniel Gonzalez</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
