@@ -62,3 +62,23 @@ body {
 .site-footer {
   border-top: 1px solid #e6e6e6;
 }
+
+
+/* Improve spacing between stacked cards */
+.card + .card {
+  margin-top: 16px;
+}
+
+/* Basic link styling */
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Make bullet lists slightly cleaner */
+ul {
+  padding-left: 18px;
+}
