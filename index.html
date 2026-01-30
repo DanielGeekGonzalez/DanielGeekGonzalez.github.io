@@ -3,38 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Daniel Gonzalez</title>
+    <title>Daniel's Personal Website</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="brand" href="index.html">Daniel Gonzalez</a>
-        <nav class="nav">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-        </nav>
-      </div>
-    </header>
 
+    <div id="site-header"></div>
     <main class="container">
-      <h1>Daniel Gonzalez</h1>
-      <p>Software Developer Intern. Learning web development.</p>
+      <section class="hero">
+        <h1>Daniel Gonzalez</h1>
+        <p class="hero-lede">
+          Computer Science student and Software Developer with a passion for solving problems in a creative manner
+        </p>
+      </section>
+
+      <section class="card photo-card">
+        <img class="profile profile-lg" src="assets/images/me.png" alt="Photo of Daniel Gonzalez" />
+      </section>
 
       <section class="card">
-        <img class="profile" src="assets/images/me.png" alt="Photo of Daniel Gonzalez" />
+        <p>
+          This site is a training project to learn HTML, CSS, and JavaScript while keeping the design clean and professional.
+        </p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small> <span id="year"></span> Daniel Gonzalez</small>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="js/layout.js"></script>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>

@@ -1,64 +1,239 @@
+/* Design tokens; site-wide variables*/
 :root {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.5;
+  --bg: #f6f7f9;          /* Background tint */
+  --surface: #ffffff;     /* Cards and header surfaces */
+  --text: #111111;        /* Main text */
+  --muted: #5a5f6a;       /* Secondary text */
+  --border: #e6e6e6;      /* Subtle borders */
+
+
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 36px;
+
+  font-family: system-ui, 'Times New Roman', Times, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+/* 2) Page defaults */
+ * {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .container {
-  width: min(1000px, 92vw);
+  width: min(1020px, 92vw);
   margin: 0 auto;
-  padding: 24px 0;
+  padding: var(--space-4) 0;
 }
 
+p {
+  color: var(--muted);
+  margin: var(--space-2) 0;
+}
+
+h1, h2 {
+  margin: 0 0 var(--space-2) 0;
+}
+
+h1 {
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  padding: var(--space-5) 0 var(--space-3) 0;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: var(--space-1);
+}
+
+.hero-lede {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-top: 0;
+}
+
+main {
+  padding-bottom: var(--space-5);
+}
+
+/* Header, sticky navigation */
 .site-header {
-  position: sticky; /*“scrolls with the page” */
+  position: sticky;
   top: 0;
-  background: white;
-  border-bottom: 1px solid #e6e6e6;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: var(--space-2) 0;
+  /* width: min(1200px, 96vw); */
+  width: 96vw; 
 }
 
 .brand {
   font-weight: 700;
   text-decoration: none;
-  color: inherit;
+  color: var(--text);
 }
 
 .nav a {
-  margin-left: 12px;
+  margin-left: var(--space-2);
   text-decoration: none;
-  color: inherit;
-  padding: 6px 8px;
-  border-radius: 8px;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
 }
 
-.nav a[aria-current="page"] {
-  outline: 2px solid #000;
+.nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.nav a:focus-visible {
+  outline: 2px solid var(--text);
   outline-offset: 2px;
 }
 
-.card {
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  padding: 16px;
+.nav a[aria-current="page"] {
+  background: rgba(0, 0, 0, 0.07);
 }
+
+/* Cards (reusable component) */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow);
+}
+
+.card + .card {
+  margin-top: var(--space-3);
+}
+
+/* Photo cards */
+.photo-card {
+  margin-top: var(--space-3);
+}
+
+.profile-lg {
+  width: min(420px, 90vw);
+}
+
 
 .profile {
   width: min(260px, 60vw);
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius);
   display: block;
+  border: 1px solid var(--border);
 }
 
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  height: 330px;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+  margin-top: var(--space-3);
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 980px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* test */
+@media (min-width: 1200px) {
+  .container {
+    padding: var(--space-3) 0; /* was space-4 */
+  }
+
+  .hero {
+    padding: var(--space-4) 0 var(--space-2) 0; /* was space-5/space-3 */
+  }
+
+  main {
+    padding-bottom: var(--space-4); /* was space-5 */
+  }
+}
+
+@media (min-height: 900px) {
+  .hero {
+    padding: var(--space-4) 0 var(--space-2) 0;
+  }
+
+  .container {
+    padding: var(--space-3) 0;
+  }
+}
+
+/* Make grid cards feel interactive without being flashy */
+.project-card {
+  transition: transform 120ms ease, box-shadow 120ms ease; 
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+.project-card p:last-child {
+  margin-top: auto;
+}
+
+/* Footer */
 .site-footer {
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.site-footer .container {
+  padding: var(--space-3) 0;
+}
+
+small {
+  color: var(--muted);
+  font-size: 0.9rem
+}
+
+/* Lists and links*/
+ul {
+  padding-left: 18px;
+  margin: var(--space-2) 0;
+}
+
+li {
+  margin: 6px 0;
+}
+
+a {
+  color: inherit;
 }
