@@ -6,19 +6,39 @@
     <title>Daniel's Personal Website</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-
+<body>
+  <div class="page">
     <div id="site-header"></div>
-    <main class="container">
-      <section class="hero">
-        <h1>Daniel Gonzalez</h1>
-        <p class="hero-lede">
-          Computer Science student and Software Developer with a passion for solving problems in a creative manner
-        </p>
-      </section>
 
-      <section class="card photo-card">
-        <img class="profile profile-lg" src="assets/images/me.png" alt="Photo of Daniel Gonzalez" />
+    <main class="container page-main">
+      <section class="hero hero-grid">
+        <div class="hero-photo">
+          <img
+            class="profile profile-xl"
+            src="assets/images/me.png"
+            alt="Photo of Daniel Gonzalez"
+          />
+        </div>
+
+        <div class="hero-text">
+          <h1>
+            <span id="typewriter" aria-label="Hi, I’m Daniel."></span><span class="cursor" aria-hidden="true">|</span>
+          </h1>
+          <p class="hero-lede">
+            Computer Science student and Software Developer with a passion for solving problems in a creative manner
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn btn-neutral"
+              href="assets/files/Daniel_G_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              View Resume
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="card">
@@ -29,7 +49,10 @@
     </main>
 
     <div id="site-footer"></div>
-    <script src="js/layout.js"></script>
+  </div>
 
-  </body>
+  <script src="js/layout.js"></script>
+  <script src="js/typewriter.js"></script>
+</body>
+
 </html>
