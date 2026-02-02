@@ -113,12 +113,16 @@ main {
 }
 
 /* Header, sticky navigation */
-.site-header {
+#site-header {
   position: sticky;
   top: 0;
+  z-index: 10;
+}
+
+/* The injected header just provides styling */
+.site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  z-index: 10;
 }
 
 .site-header .container {
